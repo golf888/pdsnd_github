@@ -1,15 +1,22 @@
 ### Date created
-Include the date you created this project and README file.
+The Bikeshare project is created on Nov 11, 2019.
+
+User instruction:
+++++++++++++++++++
+The python file is name as proj2_bikeshare2.py
+The variables used in the code are described inline.
 
 ### Project Title
-Replace the Project Title
+Bikeshare Data Study for Chicago, New York City and Washington DC.
 
 ### Description
-Describe what your project is about and what it does
+The project created a user interactive tool for questions related to the bikeshare information.
 
 ### Files used
-Include the files used
+The data files used are:
+  chicago.csv
+  new_york_city.csv
+  washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+This is a Udacity nanodegree project.

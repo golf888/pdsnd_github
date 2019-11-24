@@ -46,7 +46,7 @@ def get_filters():
             day = day_input
             break
         else:
-            print('Please choose a valid option of all, Monday, Tuesday, Wednesday, Thursday or Friday. \n')
+            print('Please choose a valid option of all, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or Sunday. \n')
             continue
 
     print('-'*40)

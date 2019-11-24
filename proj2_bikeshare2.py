@@ -23,7 +23,10 @@ def get_filters():
     while True:
         city_input = input("Would you like to see data for Chicago, New York City, or Washington? Please choose a city name: ")
         if city_input.lower() in ['chicago', 'new york city', 'new york', 'washington']:
-            city = city_input.lower()
+            if city_input.lower() == 'new york':
+                city = 'new york city'
+            else:
+                city = city_input.lower()
             break
         else:
             print("Please choose a valid option for a city.")

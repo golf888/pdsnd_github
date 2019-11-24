@@ -14,6 +14,7 @@ def get_filters():
         (str) city - name of the city to analyze
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
+
     """
     print('-'*40)
     print('\n')
@@ -21,12 +22,16 @@ def get_filters():
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
         city_input = input("Would you like to see data for Chicago, New York City, or Washington? Please choose a city name: ")
-        if city_input.lower() in ['chicago', 'new york city', 'washington']:
-            city = city_input.lower()
+        if city_input.lower() in ['chicago', 'new york city', 'new york', 'washington']:
+            if city_input.lower() == 'new york':
+                city = 'new york city'
+            else:
+                city = city_input.lower()
             break
         else:
             print("Please choose a valid option for a city.")
             continue
+
     # get user input for month (all, january, february, ... , june)
     while True:
         month_input = input('Are you interested in a specific month or all months (enter "all" for all months)? ')
@@ -37,7 +42,6 @@ def get_filters():
             print("Please choose a valid option of all, January, February, March, April, May, or June. \n")
             continue
 
-
     # get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
         day_input = input('Are you interested in a specific day of week or all days (enter "all" for all days)? ')
@@ -45,12 +49,11 @@ def get_filters():
             day = day_input
             break
         else:
-            print('Please choose a valid option of all, Monday, Tuesday, Wednesday, Thursday or Friday. \n')
+            print('Please choose a valid option of all, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or Sunday. \n')
             continue
 
     print('-'*40)
     return city, month, day
-
 
 def load_data(city, month, day):
     """
@@ -62,6 +65,7 @@ def load_data(city, month, day):
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
+
     """
 
     # load data file into a dataframe
@@ -111,7 +115,6 @@ def time_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
 
@@ -131,7 +134,6 @@ def station_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
 
@@ -146,7 +148,6 @@ def trip_duration_stats(df):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-
 
 def user_stats(df):
     """Displays statistics on bikeshare users."""
@@ -208,7 +209,6 @@ def main():
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
-
 
 if __name__ == "__main__":
 	main()
